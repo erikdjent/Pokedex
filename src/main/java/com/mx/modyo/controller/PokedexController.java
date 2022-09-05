@@ -23,6 +23,17 @@ public class PokedexController {
 	@Autowired
 	private IPokemonService pokemonService;
 	
+	@GetMapping (value = {"/pokemon", "/"})
+	public String inicial() {
+		
+		String mensajeString = "1. Para obtener el listado de los Pokemons ingrese la peticion /listPokemon y por default establecera el paginado 0 - 20 \n"
+				+ " el paginado lo pueden enviar en la misma peticion como parte de los argumentos de la peticion ejemplo: /listPokemon?offset=0&limit=30 \n"
+				+ " 2. Para buscar un Pokemon basta con indicar la peticion /pokemon/{id} o {nombre}";
+		
+		return mensajeString;
+		
+	}
+	
 	@GetMapping("/pokemon/{id}")
     public ResponseEntity<List<Pokemon>> getPokemon(@PathVariable String id) {
         return new ResponseEntity<>(pokemonService.getPokemon(id), HttpStatus.OK);
