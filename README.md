@@ -1,4 +1,4 @@
-# Pokedex
+# Pokedex v3
 # Documentacion para despliegue
       1. En Heroku-cli inciar sesion con nuestra cuenta de Heroku con el comando "heroku login"
       2. Intsalar el plugin en heroku con el comando "heroku plugins:install heroku-cli-deploy"
